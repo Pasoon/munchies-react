@@ -1,0 +1,8 @@
+/* 
+    All of the styles in the app are written in SaaS. They are put into bundle.min.js using webpack.
+    To add a new scss file, you must add it to the entry line in the webpack.config.js file.
+*/
+$color: #2cc552;
+h1 {
+    color: $color;
+}
