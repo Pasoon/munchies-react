@@ -1,4 +1,2 @@
-# react-boilerplate
-A repo to get you started with react, rxjs, webpack and sass.
-
-To use, download as a zip file or clone the repo. Then navigate to it on terminal/cmd and hit it with a npm install.
+# munchies-react
+The munchies app front end repo. Relies on munchies-flask for api and data retrieval.

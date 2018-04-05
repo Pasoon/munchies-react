@@ -1,5 +1,5 @@
 node_modules/
 package-lock.json
 .vscode/
-src/bundle.min.js
+bundle.min.js
 npm-debug.log

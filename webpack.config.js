@@ -2,14 +2,14 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: ['./src/App.jsx', './src/sass/main.scss', './src/components/Home.jsx', './src/index.js'],
+    entry: ['./src/App.jsx', './src/sass/main.scss', './src/index.js'],
     output: { path: __dirname + "/src", filename: 'bundle.min.js' },
     plugins: [
         new webpack.DefinePlugin({ // <-- key to reducing React's size
             'process.env': {
                 'NODE_ENV': JSON.stringify('development')
             }
-        }),
+        })
         //new webpack.optimize.UglifyJsPlugin(), //minify everything
         //new webpack.optimize.AggressiveMergingPlugin(), //Merge chunks
     ],
