@@ -2,7 +2,7 @@
   "name": "munchies-react",
   "version": "1.0.0",
   "description": "Website showing information about restaurants",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel": "babel",
@@ -23,6 +23,7 @@
     "css-loader": "^0.28.7",
     "node-sass": "^4.7.2",
     "react": "^16.2.0",
+    "react-bootstrap": "^0.30.10",
     "react-dom": "^16.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
@@ -30,6 +31,8 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "live-server": "^1.2.0"
+    "bootstrap": "^4.0.0",
+    "live-server": "^1.2.0",
+    "react-router-dom": "^4.2.2"
   }
 }
