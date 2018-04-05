@@ -1,5 +1,5 @@
 {
-  "name": "restaurant-website",
+  "name": "munchies-react",
   "version": "1.0.0",
   "description": "Website showing information about restaurants",
   "main": "index.js",
@@ -10,14 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZarifS/react-boilerplate.git"
+    "url": "git+https://github.com/Pasoon/munchies-react.git"
   },
   "author": "Pasoon Azimi, Zarif Shahriar",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ZarifS/react-boilerplate/issues"
-  },
-  "homepage": "https://github.com/ZarifS/react-boilerplate#readme",
+  "homepage": "https://github.com/Pasoon/munchies-react",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
