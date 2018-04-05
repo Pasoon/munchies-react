@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom'
 import { Jumbotron, Grid, Row, Col, Image, Button } from 'react-bootstrap'
 //import "./Home.css"
-require ('../sass/main.scss');
+//require ('../sass/main.scss');
 
-
-class HeaderSection extends Component {
+export default class Home extends Component {
     render(){
         return(
             <Grid>
@@ -14,9 +13,6 @@ class HeaderSection extends Component {
                     <h2>Munchies</h2>
                     <p>What are you craving?</p>
                 </Jumbotron>
-                <Link to="">
-                    <Button> bsStyle="primary">Search</Button>
-                </Link>
             </Grid>
         )
     }
