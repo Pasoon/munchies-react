@@ -63,7 +63,7 @@ export default class Home extends Component {
     render(){
         return(
             <Grid>
-                <section id = "main-jumbotron">
+                <section className="homeSection">
                     <h1>Munchies</h1>
                     <p>What are you craving?</p>
                     <FormExample id = "search-bar" />

@@ -78,7 +78,8 @@ mark,
 audio,
 video,
 details,
-summary {
+summary,
+{
     margin: 0;
     padding: 0;
     border: 0;
@@ -352,4 +353,9 @@ input[type=button] {
 
 .clearfix {
     zoom: 1;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
 }

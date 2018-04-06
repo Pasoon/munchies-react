@@ -16,33 +16,32 @@
     }
 }
 
-#main-jumbotron{
-    display: block;
+.restaurantCard {
+    color: black;
+}
+
+.homeSection {
+    min-height: $sectionHeight-small;
+    background-color: $headerSectionColor;
+    background-size: cover;
+    color: $headerFontColor;
     height: 500px;
-    width: device-width;
-    position: relative;
+    width: 100vw;
     z-index: 1;
     background-attachment: scroll;
     background-color: #03eca2;
     background-size: fill;
-      /* -webkit-animation-name: example; Safari 4.0 - 8.0
-      -webkit-animation-duration: 10s; Safari 4.0 - 8.0
-      animation-name: example;
-      animation-duration: 10s;
-      animation-iteration-count: infinite*/
+    h1 {
+        font-size: $headerLarge;
+        text-align: center;
+    }
+    p {
+        font-size: 2vw;
+        text-align: center;
+        padding: 1px 1px 1px 1px;
+    }
+}
 
-      h1{
-          font-size: $headerLarge;
-          text-align: center;
-      }
-
-      p{
-          font-size: 2vw;
-          text-align: center;
-          padding: 1px 1px 1px 1px;
-      }
-  }
-
-  #search-bar{
+#search-bar {
     padding: 1px 1px 1px 1px;
-  }
+}
