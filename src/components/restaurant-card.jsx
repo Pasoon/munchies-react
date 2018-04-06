@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Rating from 'react-rating';
 
 export default class RestaurantCard extends Component {
     constructor(props) {
@@ -25,6 +26,11 @@ export default class RestaurantCard extends Component {
                 <div className="restaurantCard-info">
                     <h1>{this.props.restaurant.name}</h1>
                     <h2>{this.props.restaurant.type}</h2>
+                    <Rating
+                        emptySymbol="glyphicon glyphicon-star-empty"
+                        fullSymbol="glyphicon glyphicon-star"
+                        initialRating={5}
+                        readonly/>
                 </div>
             </div>
         )
