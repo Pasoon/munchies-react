@@ -1,21 +1,32 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 export default class RestaurantCard extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
     render() {
-        if(!this.props.restaurant){
-              return(<div className="restaurantCard loading">
-                  Loading .......
-                  </div>
-              )
+        if (!this.props.restaurant) {
+            return (
+                <div className="restaurantCard loading">
+                    Loading .......
+                </div>
+            )
+        }
+        let url = (this.props.restaurant.url !== ''
+            ? `url(${this.props.restaurant.url})`
+            : '');
+        var styles = {
+            backgroundImage: `linear-gradient( to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), ` + url,
+            backgroundSize: 'cover',
+            overflow: 'hidden'
         }
         return (
-            <div className="restaurantCard">
-                <h1>{this.props.restaurant.name}</h1>
-                <h2>{this.props.restaurant.type}</h2>
+            <div className="restaurantCard" style={styles}>
+                <div className="restaurantCard-info">
+                    <h1>{this.props.restaurant.name}</h1>
+                    <h2>{this.props.restaurant.type}</h2>
+                </div>
             </div>
-            )
+        )
     }
 }

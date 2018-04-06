@@ -6,26 +6,12 @@
 @import "reset"; //Reset all default css by webpage
 @import "variables"; //all variables
 @import "defaults"; // default scss
-.headerSection {
-    min-height: $sectionHeight-small;
-    background-color: $headerSectionColor;
-    background-size: cover;
-    color: $headerFontColor;
-    h1 {
-        font-size: $headerLarge;
-    }
-}
-
-.restaurantCard {
-    color: black;
-}
-
 .homeSection {
     min-height: $sectionHeight-small;
     background-color: $headerSectionColor;
     background-size: cover;
     color: $headerFontColor;
-    height: 500px;
+    height: 60vh;
     width: 100vw;
     z-index: 1;
     background-attachment: scroll;
@@ -44,4 +30,27 @@
 
 #search-bar {
     padding: 1px 1px 1px 1px;
+}
+
+.featuredSection {
+    width: 100vw;
+    .featuredRow {
+        display: flex;
+        padding: 0px !important;
+    }
+}
+
+.restaurantCard {
+    color: white;
+    height: 40vh;
+    width: 25vw;
+    .restaurantCard-info {
+        padding: 20px;
+        h1 {
+            font-size: 200%;
+        }
+        h2 {
+            font-size: 125%;
+        }
+    }
 }
