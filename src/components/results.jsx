@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import RestaurantCard from './restaurant-card.jsx';
-import {Grid, Row, Col} from 'react-bootstrap'
+import {Grid, Row, Col} from 'react-bootstrap';
+import SearchBar from './search-bar.jsx';
 
 export default class Results extends Component {
         constructor(props){
             super(props);
         }
         render() {
+            console.log(this.props);
+            if (!this.props.results) {
+                return (
+                    <div>
+                    </div>
+                )
+            }
             return (
                 <div>
-                {this.props.results.map((result,i) =>{
-                    return(
-                    <div key = {i} className="restaurantCard">
-                        <h1>{this.props.restaurant.name}</h1>
-                        <h2>{this.props.restaurant.type}</h2>
-                    </div>
-                    )
-                })}
+                    <h1>{this.props.results.name}</h1>
                 </div>
                 )
         }
