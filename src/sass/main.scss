@@ -18,18 +18,25 @@
     background-color: #03eca2;
     background-size: fill;
     h1 {
+        position:relative;
         font-size: $headerLarge;
         text-align: center;
+        vertical-align: middle;
+        top: 50%
     }
     p {
         font-size: 2vw;
         text-align: center;
-        padding: 1px 1px 1px 1px;
     }
+#title{
+    margin: auto;
+    padding-top: 100px;
 }
 
 #search-bar {
-    padding: 1px 1px 1px 1px;
+    width: 50vw;
+    padding-top: 100px;
+    margin: auto
 }
 
 .featuredSection {
@@ -54,3 +61,5 @@
         }
     }
 }
+}
+

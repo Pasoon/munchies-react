@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Featured from './featured.jsx';
-import { Jumbotron, Grid, Row, Col, Image, Button, FormControl, ControlLabel, HelpBlock, InputGroup, FormGroup } from 'react-bootstrap'
+import Results from './results.jsx';
+import { Jumbotron, Grid, Row, Col, Image, Button, FormControl, ControlLabel, HelpBlock, InputGroup, FormGroup } from 'react-bootstrap';
 
 class FormExample extends Component {
     constructor(props, context) {
@@ -12,7 +13,6 @@ class FormExample extends Component {
 
       this.state = {
         value: '',
-        data: [],
       };
     }
 
@@ -31,13 +31,21 @@ class FormExample extends Component {
         console.log("YOOOOOO")
         alert('Endpoint: http://127.0.0.1:5000/restaurantByName/'+this.state.value);
         fetch('http://127.0.0.1:5000/restaurantByName/'+this.state.value)
-        .then((response) => response.json())
-        .then((findresponse) => {
-        this.setState({
-        data:findresponse.items,
+        .then(response => {
+            return response.json();
+        }).then(results => {
+          let restaurant = results.items.map((item) => {
+            return(
+              {
+                name: item.name,
+                type: item.type,
+                overallRating: item.overallRating,
+              }
+            )
+          })
+          this.setState({restaurant: results.items})
+          console.log(this.state.restaurant[0])
         })
-        })
-
       }
 
     render() {
@@ -64,9 +72,13 @@ export default class Home extends Component {
         return(
             <Grid>
                 <section className="homeSection">
-                    <h1>Munchies</h1>
-                    <p>What are you craving?</p>
-                    <FormExample id = "search-bar" />
+                    <div id = 'title'>
+                      <h1>Munchies</h1>
+                    </div>
+                    <div id = 'search-bar'>
+                      <p>What are you craving?</p>
+                      <FormExample />
+                    </div>
                 </section>
                 <Featured />
             </Grid>
