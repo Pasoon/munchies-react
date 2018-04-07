@@ -18,25 +18,25 @@
     background-color: #03eca2;
     background-size: fill;
     h1 {
-        position:relative;
+        position: relative;
         font-size: $headerLarge;
         text-align: center;
         vertical-align: middle;
-        top: 50%
+        top: 50%;
     }
     p {
         font-size: 2vw;
         text-align: center;
     }
-#title{
-    margin: auto;
-    padding-top: 100px;
-}
-
-#search-bar {
-    width: 50vw;
-    padding-top: 100px;
-    margin: auto
+    #title {
+        margin: auto;
+        padding-top: 100px;
+    }
+    #search-bar {
+        width: 50vw;
+        padding-top: 100px;
+        margin: auto;
+    }
 }
 
 .featuredSection {
@@ -44,13 +44,15 @@
     .featuredRow {
         display: flex;
         padding: 0px !important;
+        flex-wrap: wrap;
     }
 }
 
 .restaurantCard {
     color: white;
     height: 40vh;
-    width: 25vw;
+    width: calc(100% * (1/4) - 10px - 1px);
+    flex-grow: 1;
     .restaurantCard-info {
         padding: 20px;
         h1 {
@@ -62,8 +64,4 @@
     }
 }
 
-.restaurant-listitem{
-    
-}
-}
-
+.restaurant-listitem {}

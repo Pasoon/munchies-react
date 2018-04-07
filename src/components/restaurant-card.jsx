@@ -13,8 +13,9 @@ export default class RestaurantCard extends Component {
                 </div>
             )
         }
-        let url = (this.props.restaurant.url !== ''
-            ? `url(${this.props.restaurant.url})`
+        console.log(this.props.restaurant)
+        let url = (this.props.restaurant.pic_url !== ''
+            ? `url(${this.props.restaurant.pic_url})`
             : '');
         var styles = {
             backgroundImage: `linear-gradient( to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), ` + url,
@@ -29,7 +30,7 @@ export default class RestaurantCard extends Component {
                     <Rating
                         emptySymbol="glyphicon glyphicon-star-empty"
                         fullSymbol="glyphicon glyphicon-star"
-                        initialRating={5}
+                        initialRating={this.props.restaurant.overallRating}
                         readonly/>
                 </div>
             </div>
