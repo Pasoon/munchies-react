@@ -45,7 +45,7 @@ export default class RestaurantCard extends Component {
             <div className="restaurantCard" onClick={this.handleClick} style={styles}>
                 <div className="restaurantCard-info">
                     <h1>{this.props.restaurant.name}</h1>
-                    <h2>{this.props.restaurant.type}</h2>
+                    <p>{this.props.restaurant.type}</p>
                     <Rating
                         emptySymbol="glyphicon glyphicon-star-empty"
                         fullSymbol="glyphicon glyphicon-star"
