@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import RestaurantCard from './restaurant-card.jsx';
-import {Grid, Row, Col} from 'react-bootstrap'
 
 export default class Featured extends Component {
     constructor() {
@@ -24,34 +23,21 @@ export default class Featured extends Component {
 
     componentDidMount() {
         fetch('http://127.0.0.1:5000/restaurants/limit=8').then(results => {
+            alert("Got the restos!");
             return results.json();
         }).then(data => {
             let restaurants = data
                 .items
                 .map((item) => {
-                    if (!item.pic_url || this.checkResource(item.pic_url)) {
+                    if (!item.pic_url) {
                         let x = Math.floor(Math.random() * 6);
                         item.pic_url = this.state.pictures[x];
                     }
                     return ({name: item.name, type: item.type, overallRating: item.overallRating, url: item.url, pic_url: item.pic_url})
                 })
+            alert("set the restos!");
             this.setState({restaurants: restaurants});
         })
-    }
-
-    checkResource(url) {
-        console.log("IN CHECK RESOURCE");
-        var req = new XMLHttpRequest();
-        req.open('HEAD', url, true);
-        req.send();
-        if (req.status === 404) {
-            console.log("THIS URL IS AIDS: "+url);
-            return true;
-        }
-        if (req.status === 403) {
-            console.log("THIS URL IS AIDS: "+url);
-            return true;
-        }
     }
 
     render() {
