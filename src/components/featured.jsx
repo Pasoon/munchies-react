@@ -19,6 +19,7 @@ export default class Featured extends Component {
                 "https://i.ndtvimg.com/i/2017-01/chicken-620x350_620x350_81483960113.jpg"
             ]
         }
+        // this.checkResource = this.checkResource.bind(this);
     }
 
     componentDidMount() {
@@ -35,7 +36,6 @@ export default class Featured extends Component {
                     return ({name: item.name, type: item.type, overallRating: item.overallRating, url: item.url, pic_url: item.pic_url})
                 })
             this.setState({restaurants: restaurants});
-            console.log(this.state.restaurants);
         })
     }
 
@@ -57,7 +57,10 @@ export default class Featured extends Component {
     render() {
         return (
             <section className="featuredSection">
-                <div></div>
+                <div className="featuredHeader">
+                    <h1>Featured Restaurants</h1>
+                    <p>There's always something to eat.</p>
+                </div>
                 <div className="featuredRow">
                     <RestaurantCard restaurant={this.state.restaurants[0]}/>
                     <RestaurantCard restaurant={this.state.restaurants[1]}/>

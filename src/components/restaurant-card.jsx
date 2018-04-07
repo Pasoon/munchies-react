@@ -4,6 +4,9 @@ import Rating from 'react-rating';
 export default class RestaurantCard extends Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick() {
     }
     render() {
         if (!this.props.restaurant) {
@@ -23,7 +26,7 @@ export default class RestaurantCard extends Component {
             overflow: 'hidden'
         }
         return (
-            <div className="restaurantCard" style={styles}>
+            <div className="restaurantCard" onClick={this.handleClick} style={styles}>
                 <div className="restaurantCard-info">
                     <h1>{this.props.restaurant.name}</h1>
                     <h2>{this.props.restaurant.type}</h2>
