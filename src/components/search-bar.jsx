@@ -43,7 +43,6 @@ export default class SearchBar extends Component {
              )
            })
           this.setState({restaurant: temp})
-          console.log("We Here",this.state.restaurant)
         })
       }
 
