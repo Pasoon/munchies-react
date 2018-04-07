@@ -15,10 +15,9 @@ export default class Home extends Component {
                     </div>
                     <div id = 'search-bar'>
                       <p>What are you craving?</p>
-                      <SearchBar />
+                      <SearchBar/>
                     </div>
                 </section>
-                <Results/>
                 <Featured />
             </Grid>
         )

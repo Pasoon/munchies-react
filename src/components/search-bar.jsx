@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Grid, Row, Col, FormControl, ControlLabel, HelpBlock, InputGroup, FormGroup } from 'react-bootstrap';
+import Results from './results.jsx';
 
 export default class SearchBar extends Component {
     constructor(props) {
@@ -26,31 +27,24 @@ export default class SearchBar extends Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        // alert('Endpoint: http://127.0.0.1:5000/restaurantByName/'+this.state.value);
-        //fetch('http://127.0.0.1:5000/restaurantByName/'+this.state.value)
-        //.then(response => {
-            //return response.json();
-        //}).then(results => {
-          // let restaurant = results.items.map((item) => {
-          //   return(
-          //     {
-          //       name: item.name,
-          //       type: item.type,
-          //       overallRating: item.overallRating,
-          //     }
-          //   )
-          // })
-          var results = {
-
-                name: 'ZeeShah',
-                type: 'bangla',
-                url: 'bangla.com',
-                id: 1,
-
-          }
-          this.setState({restaurant: results})
+        alert('Endpoint: http://127.0.0.1:5000/restaurantByName/'+this.state.value);
+        fetch('http://127.0.0.1:5000/restaurantByName/'+this.state.value)
+        .then(response => {
+            return response.json();
+        }).then(results => {
+          let temp = results.items.map((item) => {
+             return(
+               {
+                 name: item.name,
+                 type: item.type,
+                 overallRating: item.overallRating,
+                 url: item.url,
+               }
+             )
+           })
+          this.setState({restaurant: temp})
           console.log("We Here",this.state.restaurant)
-        //})
+        })
       }
 
     render() {
@@ -69,6 +63,7 @@ export default class SearchBar extends Component {
             />
           </FormGroup>
         </form>
+        <Results data = {this.state.restaurant}/>
       </div>
       );
     }
