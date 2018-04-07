@@ -5,6 +5,9 @@ import RestaurantListItem from './restaurant-listitem.jsx';
 export default class Results extends Component {
         constructor(props){
             super(props);
+
+            this.state = {
+            }
         }
         render() {
             if (!this.props.data || this.props.data[0] == undefined) {
@@ -14,20 +17,20 @@ export default class Results extends Component {
                 )
             }
             else{
-                console.log("YESSSS: "+this.props.data[0].name)
                 return (
                     <section className="resultsSection">
                     <h3>- RESULTS -</h3>
-                    {/* {
-                        this.props.data.map(function(item){
-                            return <h5 key={item}>{item.name} : {item.type} </h5>
+                    {
+                        this.props.data.map(function(restaurant, index){
+                            console.log(restaurant,index)
+                            return <RestaurantListItem restaurant={restaurant}/>
                         })
-                    } */}
-                        <div className="resultsRow">
+                    }
+                        {/* <div className="resultsRow">
                             <RestaurantListItem />
                             <RestaurantListItem />
                             <RestaurantListItem />
-                        </div>
+                        </div> */}
                     </section>
                     )
             }

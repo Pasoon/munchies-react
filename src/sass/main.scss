@@ -11,39 +11,54 @@
     background-color: $headerSectionColor;
     background-size: cover;
     color: $headerFontColor;
-    height: 60vh;
+    height: 100%;
     width: 100vw;
     z-index: 1;
     background-attachment: scroll;
     background-color: #03eca2;
     background-size: fill;
     h1 {
-        position:relative;
+        position: relative;
         font-size: $headerLarge;
         text-align: center;
         vertical-align: middle;
-        top: 50%
+        top: 50%;
     }
     p {
         font-size: 2vw;
         text-align: center;
     }
-#title{
-    margin: auto;
-    padding-top: 100px;
-}
-
-#search-bar {
-    width: 50vw;
-    padding-top: 100px;
-    margin: auto
+    #title {
+        margin: auto;
+        padding-top: 100px;
+    }
+    #search-bar {
+        width: 50vw;
+        padding-top: 100px;
+        margin: auto;
+    }
 }
 
 .featuredSection {
     width: 100vw;
+    .featuredHeader {
+        height: 20vh;
+        text-align: center;
+        background: #454545;
+        color: white;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+        padding: 40px;
+        h1 {
+            font-size: 300%;
+        }
+        p {
+            font-size: 125%;
+        }
+    }
     .featuredRow {
         display: flex;
         padding: 0px !important;
+        flex-wrap: wrap;
     }
 }
 
@@ -54,7 +69,9 @@
 .restaurantCard {
     color: white;
     height: 40vh;
-    width: 25vw;
+    width: calc(100% * (1/4) - 10px - 1px);
+    flex-grow: 1;
+    cursor: pointer;
     .restaurantCard-info {
         padding: 20px;
         h1 {
@@ -74,5 +91,5 @@
     height: 150px;
 
 }
-}
+
 
