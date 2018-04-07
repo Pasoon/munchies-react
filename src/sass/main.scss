@@ -47,6 +47,10 @@
     }
 }
 
+.resultsSection{
+    text-align: center;
+}
+
 .restaurantCard {
     color: white;
     height: 40vh;
@@ -62,8 +66,13 @@
     }
 }
 
-.restaurant-listitem{
-    
+.restaurantListItem{
+    border-radius: 25px;
+    border: 2px solid #FFFFFF;
+    padding: 20px; 
+    width: 50vw;
+    height: 150px;
+
 }
 }
 

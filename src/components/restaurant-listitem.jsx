@@ -1,2 +1,13 @@
 import React, {Component} from 'react';
-import SearchBar from './search-bar';
+
+export default class RestaurantListItem extends Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div className="restaurantListItem">
+            </div>
+        )
+    }
+}
