@@ -74,7 +74,48 @@
 }
 
 .categorySection {
-    height: 20vh;
+    height: 100%;
+    background: #03eca2;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .2));
+    .categoryHeader {
+        height: 20vh;
+        text-align: center;
+        color: white;
+        padding: 40px;
+        h1 {
+            font-size: $headerMedium;
+        }
+        p {
+            font-size: $paragraphLarge;
+        }
+    }
+    .categoryRow {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 40px;
+        margin-left: 10%;
+        margin-right: 10%;
+        .categoryCard {
+            flex: 1 0 20%;
+            margin: 5px;
+            height: 100px;
+            max-width: 200px;
+            min-width: 200px;
+            cursor: pointer;
+             :hover {
+                background-image: linear-gradient( to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+            }
+        }
+        .categoryCard-info {
+            margin-top: 30px;
+            h1 {
+                font-size: $headerSmall;
+                text-align: center;
+            }
+            color: white;
+        }
+    }
 }
 
 .restaurantCard {
@@ -83,6 +124,9 @@
     width: calc(100% * (1/4) - 10px - 1px);
     flex-grow: 1;
     cursor: pointer;
+     :hover {
+        background-image: linear-gradient( to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    }
     .restaurantCard-info {
         padding: 20px;
         h1 {
