@@ -59,17 +59,22 @@
         display: flex;
         padding: 0px !important;
         flex-wrap: wrap;
+         :hover {
+            color: #39f5b9;
+        }
     }
 }
 
 .resultsSection {
-    text-align: center;
-    .restaurantListItem {
-        border-radius: 25px;
-        border: 2px solid #FFFFFF;
-        padding: 20px;
-        width: 50vw;
-        height: 150px;
+    width: 100vw;
+    .resultsHeader {
+        height: 15vh;
+        text-align: center;
+        color: black;
+        padding: 40px;
+        h1 {
+            font-size: 300%;
+        }
     }
 }
 
@@ -96,6 +101,9 @@
         padding-bottom: 40px;
         margin-left: 10%;
         margin-right: 10%;
+         :hover {
+            color: #39f5b9;
+        }
         .categoryCard {
             flex: 1 0 20%;
             margin: 5px;
@@ -103,9 +111,6 @@
             max-width: 200px;
             min-width: 200px;
             cursor: pointer;
-             :hover {
-                background-image: linear-gradient( to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
-            }
         }
         .categoryCard-info {
             margin-top: 30px;
@@ -124,9 +129,6 @@
     width: calc(100% * (1/4) - 10px - 1px);
     flex-grow: 1;
     cursor: pointer;
-     :hover {
-        background-image: linear-gradient( to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
-    }
     .restaurantCard-info {
         padding: 20px;
         h1 {
@@ -134,6 +136,59 @@
         }
         p {
             font-size: $paragraphLarge;
+        }
+    }
+}
+
+.restaurantListItem {
+    display: flex;
+    margin: auto;
+    background: #F1F1F1;
+    border: 2px solid #000000;
+    padding: 0px !important;
+    flex-wrap: wrap;
+    width: 50vw;
+    height: 150px;
+    .imageSection {
+        text-align: center;
+        flex-grow: 1;
+        padding: 0px !important;
+        flex-wrap: wrap;
+        min-width: 200px;
+        max-width: 250px;
+    }
+    .nameTypeDesc {
+        flex-grow: 1;
+        p {
+            font-size: 15px;
+        }
+    }
+    .Rating {
+        flex-grow: 1;
+    }
+    // .img-circle{
+    //     border: 2px solid black;
+    //     border-radius: 500px;
+    //     -moz-border-radius: 500px;
+    //     -ms-border-radius: 500px;
+    //     -o-border-radius: 500px;
+    //     -webkit-animation-name: fadeinimage; /* Safari 4.0 - 8.0 */
+    //     -moz-animation-name: fadeinimage;
+    //     -ms-animation-name: fadeinimage;
+    //     -o-animation-name: fadeinimage;
+    //       -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    //       -moz-animation-duration: 2s;
+    //       -ms-animation-duration: 2s;
+    //       -o-animation-duration: 2s;
+    //       animation-name: fadeinimage;
+    //       animation-duration: 2s;
+    //       text-align: center;  }
+    @keyframes fadeinimage {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 100;
         }
     }
 }

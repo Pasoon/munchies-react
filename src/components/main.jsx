@@ -1,0 +1,18 @@
+import React, {Component} from 'react';
+import {Switch, Route} from 'react-router-dom';
+import HeaderNavigation from './header-navigation.jsx';
+import Content from './content.jsx';
+export default class Main extends Component {
+    constructor() {
+        super();
+    }
+    render() {
+        return (
+            <div>
+                <HeaderNavigation />
+                <Content />
+                {/* Footer to be added? */}
+            </div>
+        )
+    }
+}

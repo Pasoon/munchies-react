@@ -11,7 +11,7 @@ export default class SearchBar extends Component {
 
       this.state = {
         value: '',
-        restaurant: []
+        restaurants: []
       };
     }
 
@@ -32,17 +32,19 @@ export default class SearchBar extends Component {
         .then(response => {
             return response.json();
         }).then(results => {
-          let temp = results.items.map((item) => {
+          let restaurants = results.items.map((item) => {
              return(
                {
                  name: item.name,
                  type: item.type,
                  overallRating: item.overallRating,
                  url: item.url,
+                 pic_url: item.pic_url,
                }
              )
            })
-          this.setState({restaurant: temp})
+          this.setState({restaurants: restaurants})
+          this.props.callbackFromParent(restaurants)
         })
       }
 
@@ -62,7 +64,7 @@ export default class SearchBar extends Component {
             />
           </FormGroup>
         </form>
-        <Results data = {this.state.restaurant}/>
+        {/* <Results data = {this.state.restaurant}/> */}
       </div>
       );
     }

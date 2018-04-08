@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Featured from './featured.jsx';
 import SearchBar from './search-bar.jsx';
+import Results from './results.jsx'
 import Category from './category.jsx';
 import {
     Jumbotron,
@@ -18,21 +19,39 @@ import {
 } from 'react-bootstrap';
 require('../sass/main.scss');
 
+
+
+
 export default class Home extends Component {
-    render() {
-        return (
+
+    constructor(props){
+        super(props);
+        this.state = {
+            results: ''
+        }
+
+        this.myCallback = (dataFromChild) => {
+            this.setState ({results: dataFromChild});
+        }
+
+    }
+
+
+    render(){
+        return(
             <div>
                 <section className="homeSection">
                     <div id='title'>
                         <h1>Munchies</h1>
                     </div>
-                    <div id='search-bar'>
-                        <p>What are you craving?</p>
-                        <SearchBar/>
+                    <div id = 'search-bar'>
+                      <p>What are you craving?</p>
+                      <SearchBar callbackFromParent = {this.myCallback}/>
                     </div>
                 </section>
-                <Featured/>
-                <Category/>
+                <Results data = {this.state.results}/>
+                <Featured />
+                <Category />
             </div>
         )
     }

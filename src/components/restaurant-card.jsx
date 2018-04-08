@@ -20,6 +20,7 @@ export default class RestaurantCard extends Component {
         }
     }
     handleClick() {
+        console.log(this.props.restaurant);
     }
     render() {
         if (!this.props.restaurant) {
@@ -31,7 +32,7 @@ export default class RestaurantCard extends Component {
         }
         if (!this.props.restaurant.pic_url) {
             let x = Math.floor(Math.random() * 6);
-            item.pic_url = this.state.pictures[x];
+            this.props.restaurant.pic_url = this.state.pictures[x];
         }
         let url = (this.props.restaurant.pic_url !== ''
             ? `url(${this.props.restaurant.pic_url})`
