@@ -4,6 +4,7 @@ import Featured from './featured.jsx';
 import SearchBar from './search-bar.jsx';
 import Results from './results.jsx';
 import Category from './category.jsx';
+import AddRestaurantModal from './addrestaurantmodal.jsx';
 import {
     Jumbotron,
     Grid,
@@ -15,11 +16,9 @@ import {
     ControlLabel,
     HelpBlock,
     InputGroup,
-    FormGroup
+    FormGroup,
 } from 'react-bootstrap';
 require('../sass/main.scss');
-
-
 
 
 export default class Home extends Component {
@@ -28,20 +27,22 @@ export default class Home extends Component {
         super(props);
         this.state = {
             results: '',
-            categoryresults: ''
+            categoryresults: '',
+            show: false,
         }
 
         this.searchBarCallback = (dataFromChild) => {
             this.setState ({results: dataFromChild});
         }
-
     }
 
 
     render(){
+
         return(
             <div>
                 <section className="homeSection">
+                <AddRestaurantModal/>
                     <div id='title'>
                         <h1>Munchies</h1>
                     </div>
