@@ -20,6 +20,7 @@ export default class RestaurantCard extends Component {
         }
     }
     handleClick() {
+        console.log(this.props.restaurant);
     }
     render() {
         if (!this.props.restaurant) {

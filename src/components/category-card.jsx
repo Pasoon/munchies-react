@@ -1,6 +1,28 @@
 import React, {Component} from 'react';
 
 export default class CategoryCard extends Component {
+    constructor() {
+        super();
+        this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            restaurants: []
+        }
+    }
+    handleClick() {
+        this.getData(this.props.category.name);
+    }
+
+    getData(type){
+        fetch('http://127.0.0.1:5000/restaurantByType/'+type).then(results => {
+            console.log("Categories: Got the restos!");
+            return results.json();
+        }).then(data => {
+            console.log("Categories: Set the Restos!");
+            let restaurants = data.items
+            console.log(restaurants);
+            this.setState({restaurants: restaurants});
+        })
+    }
     render() {
         let url = (this.props.category.picture !== ''
             ? `url(${this.props.category.picture})`
@@ -11,12 +33,10 @@ export default class CategoryCard extends Component {
             overflow: 'hidden',
         }
         return (
-            <div className="box">
-            <div className="categoryCard" style={styles}>
+            <div className="categoryCard" onClick={this.handleClick} style={styles}>
                 <div className="categoryCard-info">
                     <h1>{this.props.category.name}</h1>
                 </div>
-            </div>
             </div>
         )
     }

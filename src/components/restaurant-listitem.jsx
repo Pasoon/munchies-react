@@ -9,7 +9,6 @@ export default class RestaurantListItem extends Component {
     render() {
 
         console.log("LETS GOOOO!: "+this.props.restaurant.pic_url);
-
         let url = (this.props.restaurant.pic_url !== ''
             ? `url(${this.props.restaurant.pic_url})`
             : '');
@@ -22,7 +21,6 @@ export default class RestaurantListItem extends Component {
                 <div className = "restaurantListItem">
                     <div className ="imageSection" style={styles}>
                     </div>
-
                     <div className = "nameTypeDesc">
                         <h2 className ="restoName">{this.props.restaurant.name}</h2>
                         <hr></hr>
