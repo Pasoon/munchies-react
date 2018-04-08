@@ -6,8 +6,6 @@ export default class Results extends Component {
         constructor(props){
             super(props);
 
-            this.state = {
-            }
         }
         render() {
             if (!this.props.data || this.props.data[0] == undefined) {
@@ -19,21 +17,20 @@ export default class Results extends Component {
             else{
                 return (
                     <section className="resultsSection">
-                    <h3>- RESULTS -</h3>
-                    {
-                        this.props.data.map(function(restaurant, index){
-                            console.log(restaurant,index)
-                            return <RestaurantListItem restaurant={restaurant}/>
-                        })
-                    }
-                        {/* <div className="resultsRow">
-                            <RestaurantListItem />
-                            <RestaurantListItem />
-                            <RestaurantListItem />
-                        </div> */}
-                    </section>
-                    )
-            }
+                        <div className="resultsHeader">
+                            <h1>Results</h1>
+                        </div>
+                        <div class Name="resultsRow">
+                            {
+                                this.props.data.map(function(restaurant, index){
+                                console.log("YESS SIRRRRR",restaurant,index)
+                                return <RestaurantListItem restaurant={restaurant}/>
+                                })
+                            }
+                        </div>
+                        </section>
+                        )
+                }
             }
         }
 

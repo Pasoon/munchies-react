@@ -63,7 +63,22 @@
 }
 
 .resultsSection{
-    text-align: center;
+    width: 100vw;
+    .resultsHeader{
+        height: 15vh;
+        text-align: center;
+        color: black;
+        padding: 40px;
+        h1 {
+            font-size: 300%;
+        }
+    }
+
+    .resultsRow{
+        display: flex;
+        padding: 0px !important;
+        flex-wrap: wrap;
+    }
 }
 
 .restaurantCard {
@@ -84,12 +99,49 @@
 }
 
 .restaurantListItem{
-    border-radius: 25px;
-    border: 2px solid #FFFFFF;
-    padding: 20px; 
+    display:flex;
+    margin:auto;
+    background: #F1F1F1;
+    border: 2px solid #000000;
+    padding: 20px;
     width: 50vw;
     height: 150px;
 
 }
+
+.imageSection{
+        text-align: center;
+        overflow: hidden;
+        flex-grow: 1;
+        background-size: cover;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+}
+
+.RestoRow{
+}
+
+// .img-circle{
+  
+//     border: 2px solid black;
+//     border-radius: 500px;
+//     -moz-border-radius: 500px;
+//     -ms-border-radius: 500px;
+//     -o-border-radius: 500px;
+//     -webkit-animation-name: fadeinimage; /* Safari 4.0 - 8.0 */
+//     -moz-animation-name: fadeinimage;
+//     -ms-animation-name: fadeinimage;
+//     -o-animation-name: fadeinimage;
+//       -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+//       -moz-animation-duration: 2s;
+//       -ms-animation-duration: 2s;
+//       -o-animation-duration: 2s;
+//       animation-name: fadeinimage;
+//       animation-duration: 2s;
+//       text-align: center;  }
+  
+       @keyframes fadeinimage{
+      0%{opacity: 0;}
+      100%{opacity: 100;}
+    }
 
 
