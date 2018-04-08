@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Featured from './featured.jsx';
 import SearchBar from './search-bar.jsx';
-import Results from './results.jsx'
+import Results from './results.jsx';
 import Category from './category.jsx';
 import {
     Jumbotron,
@@ -27,10 +27,11 @@ export default class Home extends Component {
     constructor(props){
         super(props);
         this.state = {
-            results: ''
+            results: '',
+            categoryresults: ''
         }
 
-        this.myCallback = (dataFromChild) => {
+        this.searchBarCallback = (dataFromChild) => {
             this.setState ({results: dataFromChild});
         }
 
@@ -46,7 +47,7 @@ export default class Home extends Component {
                     </div>
                     <div id = 'search-bar'>
                       <p>What are you craving?</p>
-                      <SearchBar callbackFromParent = {this.myCallback}/>
+                      <SearchBar callbackFromParent = {this.searchBarCallback}/>
                     </div>
                 </section>
                 <Results data = {this.state.results}/>
