@@ -64,6 +64,7 @@
 
 .resultsSection{
     width: 100vw;
+    padding-bottom: 20px;
     .resultsHeader{
         height: 15vh;
         text-align: center;
@@ -72,6 +73,10 @@
         h1 {
             font-size: 300%;
         }
+    }
+    .resultsRow{
+        overflow-y: scroll;
+        height: 600px;
     }
 }
 
@@ -146,6 +151,7 @@
     background: #F1F1F1;
     border: 2px solid #000000;
     padding: 0px !important;
+    margin-bottom: 10px;
     flex-wrap: wrap;
     width: 50vw;
     height: 150px;
@@ -161,14 +167,20 @@
 
     .nameTypeDesc{
         flex-grow: 1;
+        padding-left: 5px;
+        .restoName{
+            font-size: 25px;
+        }
+
+        .restoType{
+            font-size: 17px;
+        }
+
         p{
             font-size: 15px;
         }
     } 
 
-    .Rating{
-        flex-grow: 1;
-    }
 
 
 

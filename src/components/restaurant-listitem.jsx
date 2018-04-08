@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Jumbotron, Grid, Row, Col, Image, Button, FormControl, ControlLabel, HelpBlock, InputGroup, FormGroup } from 'react-bootstrap';
+import Rating from 'react-rating';
 
 export default class RestaurantListItem extends Component {
     constructor(props) {
@@ -13,23 +14,25 @@ export default class RestaurantListItem extends Component {
             ? `url(${this.props.restaurant.pic_url})`
             : '');
         var styles = {
-            backgroundImage: `linear-gradient( to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), ` + url,
+            backgroundImage: url,
             backgroundSize: 'cover',
             overflow: 'hidden'
         }
         return (
                 <div className = "restaurantListItem">
-                    <div className ="imageSection" styles={styles}>
+                    <div className ="imageSection" style={styles}>
                     </div>
 
                     <div className = "nameTypeDesc">
-                        <h2>{this.props.restaurant.name}</h2>
-                        <h5>{this.props.restaurant.type}</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-
-                    <div className = "Rating">
-                        <h5>{this.props.restaurant.overallRating}</h5>
+                        <h2 className ="restoName">{this.props.restaurant.name}</h2>
+                        <hr></hr>
+                        <h5 className ="restoType">{this.props.restaurant.type}</h5>
+                        <Rating
+                        emptySymbol="glyphicon glyphicon-star-empty"
+                        fullSymbol="glyphicon glyphicon-star"
+                        initialRating={this.props.restaurant.overallRating}
+                        readonly/>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem massa, auctor a enim id, gravida sodales nibh.</p>
                     </div>
                 </div>
 
