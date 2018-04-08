@@ -7,23 +7,31 @@ export default class RestaurantListItem extends Component {
     }
     render() {
 
-        
-        console.log("LETS GOOOO!: "+this.props.restaurant.name);
-        return (
-                <Row className = "restaurantListItem">
-                    <Col className ="imageSection" xs={6} md={4}>
-                        <img src={this.props.restaurant.pic_url}/>
-                    </Col>
+        console.log("LETS GOOOO!: "+this.props.restaurant.pic_url);
 
-                    <Col xs={6} md={4}>
+        let url = (this.props.restaurant.pic_url !== ''
+            ? `url(${this.props.restaurant.pic_url})`
+            : '');
+        var styles = {
+            backgroundImage: `linear-gradient( to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), ` + url,
+            backgroundSize: 'cover',
+            overflow: 'hidden'
+        }
+        return (
+                <div className = "restaurantListItem">
+                    <div className ="imageSection" styles={styles}>
+                    </div>
+
+                    <div className = "nameTypeDesc">
                         <h2>{this.props.restaurant.name}</h2>
                         <h5>{this.props.restaurant.type}</h5>
-                    </Col>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
 
-                    <Col xs={6} md={4}>
+                    <div className = "Rating">
                         <h5>{this.props.restaurant.overallRating}</h5>
-                    </Col>
-                </Row>
+                    </div>
+                </div>
 
         )
     }

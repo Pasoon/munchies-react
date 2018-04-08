@@ -73,12 +73,6 @@
             font-size: 300%;
         }
     }
-
-    .resultsRow{
-        display: flex;
-        padding: 0px !important;
-        flex-wrap: wrap;
-    }
 }
 
 .restaurantCard {
@@ -103,22 +97,32 @@
     margin:auto;
     background: #F1F1F1;
     border: 2px solid #000000;
-    padding: 20px;
+    padding: 0px !important;
+    flex-wrap: wrap;
     width: 50vw;
     height: 150px;
 
-}
-
-.imageSection{
+    .imageSection{
         text-align: center;
-        overflow: hidden;
         flex-grow: 1;
-        background-size: cover;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
-}
+        padding: 0px !important;
+        flex-wrap: wrap;
+        min-width: 200px;
+        max-width: 250px;
+    }
 
-.RestoRow{
-}
+    .nameTypeDesc{
+        flex-grow: 1;
+        p{
+            font-size: 15px;
+        }
+    } 
+
+    .Rating{
+        flex-grow: 1;
+    }
+
+
 
 // .img-circle{
   
@@ -145,3 +149,4 @@
     }
 
 
+}

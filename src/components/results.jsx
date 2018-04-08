@@ -20,7 +20,7 @@ export default class Results extends Component {
                         <div className="resultsHeader">
                             <h1>Results</h1>
                         </div>
-                        <div class Name="resultsRow">
+                        <div className="resultsRow">
                             {
                                 this.props.data.map(function(restaurant, index){
                                 console.log("YESS SIRRRRR",restaurant,index)
