@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: ['./src/App.jsx', './src/sass/main.scss', './src/index.js'],
+    entry: ['./src/app.jsx', './src/sass/main.scss', './src/index.js'],
     output: { path: __dirname + "/src", filename: 'bundle.min.js' },
     plugins: [
         new webpack.DefinePlugin({ // <-- key to reducing React's size
