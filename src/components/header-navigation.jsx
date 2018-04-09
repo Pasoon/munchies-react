@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import Home from './home.jsx';
 import Restaurant from './restaurant.jsx';
+import AddRestaurantModal from './addrestaurantmodal.jsx';
+import AddRater from './add-rater.jsx';
 export default class HeaderNavigation extends Component {
     constructor() {
         super();
@@ -9,14 +11,13 @@ export default class HeaderNavigation extends Component {
     render() {
         return (
             <div className="headerSection">
-                <ul>
-                    <li>
-                        <Link to='/'>Home</Link>
-                    </li>
-                    <li>
-                        <Link to='/restaurant'>Restaurant</Link>
-                    </li>
-                </ul>
+                <div className="headerTitle">
+                <Link to='/'>Munchies</Link>
+                </div>
+                <div className="headerLinks">
+                    <div className="headerLinksItem"><AddRestaurantModal/></div>
+                    <div className="headerLinksItem"><AddRater/></div>
+                </div>
             </div>
         )
     }

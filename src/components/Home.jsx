@@ -16,44 +16,41 @@ import {
     ControlLabel,
     HelpBlock,
     InputGroup,
-    FormGroup,
+    FormGroup
 } from 'react-bootstrap';
 require('../sass/main.scss');
 
-
 export default class Home extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             results: '',
             categoryresults: '',
-            show: false,
+            show: false
         }
 
         this.searchBarCallback = (dataFromChild) => {
-            this.setState ({results: dataFromChild});
+            this.setState({results: dataFromChild});
         }
     }
 
+    render() {
 
-    render(){
-
-        return(
+        return (
             <div>
                 <section className="homeSection">
-                <AddRestaurantModal/>
                     <div id='title'>
                         <h1>Munchies</h1>
                     </div>
-                    <div id = 'search-bar'>
-                      <p>What are you craving?</p>
-                      <SearchBar callbackFromParent = {this.searchBarCallback}/>
+                    <div id='search-bar'>
+                        <p>What are you craving?</p>
+                        <SearchBar callbackFromParent={this.searchBarCallback}/>
                     </div>
                 </section>
-                <Results data = {this.state.results}/>
-                <Featured />
-                <Category />
+                <Results data={this.state.results}/>
+                <Featured/>
+                <Category/>
             </div>
         )
     }
