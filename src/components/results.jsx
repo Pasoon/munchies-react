@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
 import RestaurantListItem from './restaurant-listitem.jsx';
 
 export default class Results extends Component {
