@@ -68,6 +68,7 @@
 
 .resultsSection {
     width: 100vw;
+    padding-bottom: 20px;
     .resultsHeader {
         height: 15vh;
         text-align: center;
@@ -76,6 +77,10 @@
         h1 {
             font-size: 300%;
         }
+    }
+    .resultsRow{
+        overflow-y: scroll;
+        height: 600px;
     }
 }
 
@@ -147,6 +152,7 @@
     background: #F1F1F1;
     border: 2px solid #000000;
     padding: 0px !important;
+    margin-bottom: 10px;
     flex-wrap: wrap;
     width: 50vw;
     height: 150px;
@@ -156,26 +162,33 @@
         padding: 0px !important;
         flex-wrap: wrap;
         min-width: 200px;
-        max-width: 250px;
+        max-width: 220px;
     }
     .nameTypeDesc {
         flex-grow: 1;
-        p {
+        padding-left: 5px;
+        min-width: 400px;
+        max-width: 400px;
+        .restoName{
+            font-size: 25px;
+        }
+
+        .restoType{
+            font-size: 17px;
+        }
+
+        p{
             font-size: 15px;
         }
-    }
+    } 
+
+
+
+
+
     .Rating {
         flex-grow: 1;
     }
-    @keyframes fadeinimage {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 100;
-        }
-    }
-}
 
 .restaurantSection {
     background: #03eca2;

@@ -9,7 +9,7 @@ export default class CategoryCard extends Component {
         }
     }
     handleClick() {
-        this.getData(this.props.category.name);
+        this.getData(this.props.category.name)
     }
 
     getData(type){
@@ -21,6 +21,7 @@ export default class CategoryCard extends Component {
             let restaurants = data.items
             console.log(restaurants);
             this.setState({restaurants: restaurants});
+            this.props.callbackFromParent(restaurants);
         })
     }
     render() {
