@@ -10,7 +10,7 @@ export default class Content extends Component {
         return (
             <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route exact path='/restaurant' component={Restaurant}/>
+                    <Route path='/restaurant/:id' component={Restaurant}/>
             </Switch>
         )
     }

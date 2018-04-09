@@ -6,6 +6,7 @@
 @import "reset"; //Reset all default css by webpage
 @import "variables"; //all variables
 @import "defaults"; // default scss
+@import "table"; //React table scss
 .homeSection {
     min-height: $sectionHeight-small;
     background-color: $headerSectionColor;
@@ -181,12 +182,73 @@
         }
     } 
 
-
-
-
-
     .Rating {
         flex-grow: 1;
     }
+}
 
+.restaurantSection {
+    background: #03eca2;
+    min-height: 100vh;
+    height: 100%;
+    .content {
+        margin-left: 15%;
+        margin-right: 15%;
+        background: white;
+        height: 100%;
+        min-height: 100vh;
+        .restaurantHeader {
+            height: 30vh;
+            position: relative;
+            .restaurantHeaderTitle {
+                position: absolute;
+                bottom: 10px;
+                left: 20px;
+                font-size: $headerMedium;
+                color: white;
+            }
+        }
+        .restaurantContent {
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            min-height: 100%;
+            .restaurantContentItem {
+                margin: 0 10px;
+                h1 {
+                    font-size: 35px;
+                }
+            }
+        }
+        .restaurantLocation {
+            min-height: 20vh;
+            height: 100%;
+            text-align: center;
+            .restaurantLocationHeader {
+                font-size: 30px;
+                padding-bottom: 10px;
+            }
+            .restaurantLocationList {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                padding: 10px;
+            }
+        }
+        .restaurantMenu {
+            .restaurantMenuHeader {
+                font-size: 30px;
+                padding-bottom: 10px;
+                text-align: center;
+            }
+            .menuTable {
+                text-transform: capitalize;
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+        }
+    }
 }
