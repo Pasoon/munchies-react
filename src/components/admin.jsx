@@ -24,25 +24,31 @@ export default class Admin extends Component {
 
         var dummydata = [
             {
-                name: 'Zeeshah',
-                type: 'bangla',
-                id: '3'
-            }, {
-                name: 'Pasoon',
-                type: 'afghan',
-                id: '2'
-            }
+                name: '',
+                type: '',
+                id: ''
+            }, 
         ]
         this.state = {
-            value: 'select',
-            dummydata: dummydata,
-            columns: Object.keys(dummydata[0])
+            dummydata: [],
+            columns: Object.keys(dummydata[0]),
+
         }
 
     }
 
     handleSelectionChange(e) {
-        this.setState({value: e.target.value});
+        console.log(e.target.value)
+        fetch(e.target.value)
+        .then(response => {
+            return response.json();
+        }).then(results => {
+          let data = results.items;
+          console.log("results",data)
+           this.setState({dummydata: data})
+           this.setState({columns:Object.keys(data[0])})
+        })
+
     }
 
     render() {
@@ -60,11 +66,8 @@ export default class Admin extends Component {
                             onChange={this.handleSelectionChange}
                             value={this.state.value}
                             placeholder="select">
-                            <option value="select">Query 1</option>
-                            <option value="select">Query 2</option>
-                            <option value="select">Query 3</option>
-                            <option value="select">Query 4</option>
-                            <option value="select">Query 5</option>
+                            <option value="http://127.0.0.1:5000/restaurants">Get All Restaurants</option>
+                            <option value="test">Query 2</option>
                             <option value="other">...</option>
                         </FormControl>
                     </FormGroup>
