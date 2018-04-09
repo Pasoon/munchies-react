@@ -17,6 +17,7 @@ export default class HeaderNavigation extends Component {
                 <div className="headerLinks">
                     <div className="headerLinksItem"><AddRestaurantModal/></div>
                     <div className="headerLinksItem"><AddRater/></div>
+                    <div className="headerLinksItem"><Link to='/admin'>Admin</Link></div>
                 </div>
             </div>
         )
