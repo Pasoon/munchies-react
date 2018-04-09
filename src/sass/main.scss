@@ -279,3 +279,31 @@
         }
     }
 }
+
+.adminSection {
+    width: 100%;
+    background-color: #39f5b9;
+    .adminHeader {
+        height: 20vh;
+        text-align: center;
+        background: #454545;
+        color: #FFFFFF;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+        padding: 40px;
+        h1 {
+            font-size: $headerMedium;
+        }
+        p {
+            font-size: $paragraphLarge;
+        }
+    }
+    .adminQuerySection {
+        width: 50vw;
+        padding-top: 100px;
+        margin: auto;
+    }
+
+    .adminRetrievedDataSection{
+        
+    }
+}
