@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import Home from './home.jsx';
 import Restaurant from './restaurant.jsx';
+import Admin from './admin.jsx'
 export default class HeaderNavigation extends Component {
     constructor() {
         super();
@@ -15,6 +16,9 @@ export default class HeaderNavigation extends Component {
                     </li>
                     <li>
                         <Link to='/restaurant'>Restaurant</Link>
+                    </li>
+                    <li>
+                        <Link to='/admin'>Admin</Link>
                     </li>
                 </ul>
             </div>
