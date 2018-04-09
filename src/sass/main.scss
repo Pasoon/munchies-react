@@ -7,6 +7,11 @@
 @import "variables"; //all variables
 @import "defaults"; // default scss
 @import "table"; //React table scss
+.spacer {
+    width: 100%;
+    height: 65px;
+}
+
 .headerSection {
     display: flex;
     padding: 10px;
@@ -14,6 +19,7 @@
     position: fixed;
     width: 100vw;
     color: white;
+    z-index: 10;
     a {
         color: white;
     }

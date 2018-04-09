@@ -9,9 +9,11 @@ export default class Main extends Component {
     render() {
         return (
             <div>
-                <HeaderNavigation />
-                <Content />
-                {/* Footer to be added? */}
+                <HeaderNavigation/>
+                <div class="spacer">
+                    &nbsp;
+                </div>
+                <Content/>
             </div>
         )
     }
