@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CategoryCard from './category-card.jsx';
+import Results from './results.jsx';
 
 export default class Category extends Component {
     constructor() {
@@ -25,7 +26,12 @@ export default class Category extends Component {
                 "https://lefrancophile.com/wp-content/uploads/2010/02/french-baguette.gif",
                 "http://www.readersdigest.ca/wp-content/uploads/2016/01/poutine-canadian-dishes.jpg"
             ],
-            categoryComponents: []
+            categoryComponents: [],
+            cardresults: ''
+        }
+
+        this.categoryCardCallBack = (dataFromChild) => {
+            this.setState({cardresults: dataFromChild })
         }
     }
     componentWillMount() {
@@ -39,13 +45,14 @@ export default class Category extends Component {
                 }
                 return (
                     <div key={item}>
-                        <CategoryCard category={category}/>
+                        <CategoryCard callbackFromParent={this.categoryCardCallBack} category={category} />
                     </div>
                 )
             });
         this.setState({categoryComponents: items});
     }
     render() {
+        console.log("YES OVER HERE: ", this.state.cardresults)
         return (
             <section className="categorySection">
                 <div className="categoryHeader">
@@ -55,6 +62,7 @@ export default class Category extends Component {
                 <div className="categoryRow">
                     {this.state.categoryComponents}
                 </div>
+                <Results data ={this.state.cardresults}/>
             </section>
         )
     }
