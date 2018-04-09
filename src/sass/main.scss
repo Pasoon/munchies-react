@@ -288,14 +288,17 @@
 
 .adminSection {
     width: 100%;
-    background-color: #39f5b9;
+    background-color: #454545;
+    .react-bs-table-container {
+        background: #F1F1F1;
+        color: black !important;
+    }
     .adminHeader {
-        height: 20vh;
+        height: 30vh;
         text-align: center;
-        background: #454545;
+        background: #28eba4;
         color: #FFFFFF;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
-        padding: 40px;
+        padding: 60px;
         h1 {
             font-size: $headerMedium;
         }
@@ -305,11 +308,16 @@
     }
     .adminQuerySection {
         width: 50vw;
-        padding-top: 100px;
+        padding-top: 20px;
         margin: auto;
+        color: white;
+        .queryHeader {
+            text-align: center;
+            font-size: 250%;
+            padding: 20px;
+        }
     }
-
-    .adminRetrievedDataSection{
-        
+    .adminRetrievedDataSection {
+        padding: 50px;
     }
 }
