@@ -84,6 +84,7 @@ export default class AddRestaurantModal extends Component {
         .catch(function(res){ console.log(res) })
       }
 
+
     render(){
         return(
             <div>
