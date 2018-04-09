@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom';
 import Rating from 'react-rating';
 
-export default class RestaurantCard extends Component {
+class RestaurantCard extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
@@ -20,7 +21,8 @@ export default class RestaurantCard extends Component {
         }
     }
     handleClick() {
-        console.log(this.props.restaurant);
+        let url = `/restaurant/` + this.props.restaurant.restaurantId;
+        this.props.history.push(url);
     }
     render() {
         if (!this.props.restaurant) {
@@ -57,3 +59,6 @@ export default class RestaurantCard extends Component {
         )
     }
 }
+
+export default withRouter(RestaurantCard);
+
