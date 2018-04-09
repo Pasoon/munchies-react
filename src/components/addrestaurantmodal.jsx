@@ -87,7 +87,7 @@ export default class AddRestaurantModal extends Component {
     render(){
         return(
             <div>
-                <div bsStyle="primary" bsSize="large" onClick={this.handleShow} className="headerLink">Add a Restaurant</div>
+                <div onClick={this.handleShow} className="headerLink">Add a Restaurant</div>
                 <Modal show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Add a Restaurant</Modal.Title>

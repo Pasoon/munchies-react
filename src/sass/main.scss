@@ -7,6 +7,35 @@
 @import "variables"; //all variables
 @import "defaults"; // default scss
 @import "table"; //React table scss
+.headerSection {
+    display: flex;
+    padding: 10px;
+    background: #28eba4;
+    position: fixed;
+    width: 100vw;
+    color: white;
+    a {
+        color: white;
+    }
+    .headerTitle {
+        font-size: 200%;
+        cursor: pointer;
+    }
+    .headerLinks {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding-right: 30px;
+        padding-top: 10px;
+        .headerLinksItem {
+            margin-left: 5px;
+            margin-right: 5px;
+            cursor: pointer;
+            font-size: 115%;
+        }
+    }
+}
+
 .homeSection {
     min-height: $sectionHeight-small;
     background-color: $headerSectionColor;
