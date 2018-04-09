@@ -102,7 +102,7 @@ export default class Restaurant extends Component {
                     <hr/>
                     <div className="restaurantMenu">
                         <h1 className="restaurantMenuHeader">Menu</h1>
-                        <MenuItem items = {this.state.menu}/>
+                        <MenuItem items = {this.state.menu} restaurantId={this.state.restaurant.restaurantId}/>
                     </div>
                 </div>
             </div>

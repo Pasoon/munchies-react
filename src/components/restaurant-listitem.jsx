@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
 import { Jumbotron, Grid, Row, Col, Image, Button, FormControl, ControlLabel, HelpBlock, InputGroup, FormGroup } from 'react-bootstrap';
 import Rating from 'react-rating';
+import {withRouter} from 'react-router-dom';
 
-export default class RestaurantListItem extends Component {
+class RestaurantListItem extends Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick() {
+        let url = `/restaurant/` + this.props.restaurant.restaurantId;
+        this.props.history.push(url);
     }
     render() {
-
         console.log("LETS GOOOO!: "+this.props.restaurant.pic_url);
         let url = (this.props.restaurant.pic_url !== ''
             ? `url(${this.props.restaurant.pic_url})`
@@ -18,7 +23,7 @@ export default class RestaurantListItem extends Component {
             overflow: 'hidden'
         }
         return (
-                <div className = "restaurantListItem">
+                <div className = "restaurantListItem" onClick={this.handleClick}>
                     <div className ="imageSection" style={styles}>
                     </div>
                     <div className = "nameTypeDesc">
@@ -33,7 +38,8 @@ export default class RestaurantListItem extends Component {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem massa, auctor a enim id, gravida sodales nibh.</p>
                     </div>
                 </div>
-
         )
     }
 }
+
+export default withRouter(RestaurantListItem);
